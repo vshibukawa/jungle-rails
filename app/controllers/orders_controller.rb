@@ -10,6 +10,12 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
+
+      url = order_url order.id
+
+      OrderReceiptMailer.order_receipt(order, url)
+        .deliver_now
+
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
