@@ -86,4 +86,22 @@ main section.products-show {
   }
 }
 
+main section.review {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.2rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  .review-rating {
+    display: inline;
+  }
+
+  .review-info,
+  .review-description {
+    font-size: 1.1em;
+  }
+}
 
