@@ -4,9 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # byebug
     @user = User.find_by_email(params[:session][:email])
-    # If the user exists AND the password entered is correct.
     if @user && @user.authenticate(params[:session][:password])
       # Save the user id inside the browser cookie. This is how we keep the user
       # logged in when they navigate around our website.
@@ -14,8 +12,8 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       # If user's login doesn't work, send them back to the login form.
-      # redirect_to '/login'
-      redirect_to new_session_path
+      flash[:danger] = "Email and password do not match"
+      redirect_to '/login'
     end
   end
 

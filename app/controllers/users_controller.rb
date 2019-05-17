@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
+      flash[:danger] = @user.errors.full_messages.first
       render :new
     end
   end
