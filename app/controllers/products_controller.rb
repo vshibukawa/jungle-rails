@@ -14,4 +14,5 @@ class ProductsController < ApplicationController
     # filtered[0].first_name
   end
 
+
 end

@@ -87,21 +87,31 @@ main section.products-show {
 }
 
 main section.review {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  border: solid 0.2rem;
+  margin: 2rem;
+  border: solid 0.2rem lightgray;
   border-radius: 0.5rem;
   padding: 1rem;
 
-  .review-rating {
-    display: inline;
+  .header{
+    display: flex;
+    justify-content: space-between;
+    .review-rating {
+      display: inline;
+    }
+    .review-info {
+      font-size: 1.1em;
+      word-break: break-word;
+    }
   }
-
-  .review-info,
   .review-description {
     font-size: 1.1em;
+    word-break: break-word;
   }
 }
 
+.glyphicon.glyphicon-star.yellow{
+  color: #c5a011;
+}
+.glyphicon.glyphicon-star-empty.yellow{
+  color: #c5a011;
+}

@@ -5,9 +5,8 @@
   </header>
 
   <% if enhanced_cart.size == 0 %>
-    <p>Cart is empty!
-      <a href="<%= root_path %>">Go to the home page!</a>
-    </p>
+    <p>Cart is empty!</p>
+    <a href="<%= root_path %>", class= "btn btn-default">Go to the home page!</a>
 
   <% else %>
     <div class="panel panel-default items">
