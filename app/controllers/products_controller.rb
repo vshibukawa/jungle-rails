@@ -7,7 +7,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find params[:id]
     @reviews = Review.where(product_id: @product.id).order(created_at: :desc)
-    @users = @reviews.users.all
+    # byebug
+    # @users = User.find(@reviews) if @reviews.size
+    # filtered = @users.collect{ |user| user if user.id == 2 }
+    # filtered[0].first_name
   end
 
 end
