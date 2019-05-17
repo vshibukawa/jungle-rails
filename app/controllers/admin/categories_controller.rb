@@ -1,5 +1,4 @@
 class Admin::CategoriesController < Admin::BaseController
-# class Admin::CategoriesController < ActionController::Base #ApplicationController
 
   def index
     @categories = Category.order(:name).all
