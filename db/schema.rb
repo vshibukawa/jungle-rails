@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190515201635) do
+ActiveRecord::Schema.define(version: 20190517115306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,20 @@ ActiveRecord::Schema.define(version: 20190515201635) do
   add_index "resources_references", ["resource_id"], name: "resources_references_resource_id_index", using: :btree
   add_index "resources_references", ["user_id"], name: "resources_references_user_id_index", using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.string   "description"
+    t.integer  "rating"
+    t.integer  "products_id"
+    t.integer  "users_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["products_id"], name: "index_reviews_on_products_id", using: :btree
+  add_index "reviews", ["users_id"], name: "index_reviews_on_users_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string "first_name",      limit: 50
     t.string "last_name",       limit: 50
@@ -125,4 +139,6 @@ ActiveRecord::Schema.define(version: 20190515201635) do
   add_foreign_key "resources_references", "rates", name: "resources_references_rate_id_foreign", on_delete: :cascade
   add_foreign_key "resources_references", "resources", name: "resources_references_resource_id_foreign", on_delete: :cascade
   add_foreign_key "resources_references", "users", name: "resources_references_user_id_foreign", on_delete: :cascade
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
 end
