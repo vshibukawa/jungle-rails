@@ -26,11 +26,14 @@
       </div>
     </div>
 
-    <div class="row">
-      <% @reviews.each do |review| %>
-        <%= render partial: '/products/review', locals: { product: @product, review: review } %>
-      <% end %>
-    </div>
+    <% if @reviews.size %>
+      <h3>Reviews</h3>
+      <div class="row">
+        <% @reviews.each do |review| %>
+          <%= render partial: '/products/review', locals: { product: @product, review: review } %>
+        <% end %>
+      </div>
+    <% end%>
   </article>
 
 </section>
