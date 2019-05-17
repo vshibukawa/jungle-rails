@@ -1,6 +1,6 @@
 class CreateReviews < ActiveRecord::Migration
   def up
-    create_table :reviews do |t|
+    create_table :reviews, force: :cascade do |t|
       t.integer :product_id
       t.integer :user_id
       t.string :description
