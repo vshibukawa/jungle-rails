@@ -2,6 +2,17 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Final Product
+
+Admin - categories
+![Image of admin category](./img/categories.png)
+
+Order
+![Image of order](./img/order.png)
+
+Product Review
+![Image of product review](./img/review.png)
+
 
 ## Setup
 
@@ -19,7 +30,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
-More information in their docs: <https://stripe.com/docs/testing#cards>
+More information [here](<https://stripe.com/docs/testing#cards>)
 
 ## Dependencies
 
@@ -27,8 +38,10 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * PostgreSQL 9.x
 * Stripe
 
+## Features
 
+* Fix the known issues
 
-##
+## Known issues
 
-haven't done the stretches from day 4
+* The user cam make a purchase without login
