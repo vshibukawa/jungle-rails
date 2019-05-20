@@ -1,5 +1,5 @@
 <article class="product">
-  <% product = Product.find_by id: item.product_id %>
+  <% product = item.product %>
   <tr>
     <td>
       <%= image_tag product.image.tiny %>

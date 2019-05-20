@@ -29,7 +29,7 @@ module OrderHelper
             end
 
             tbody = content_tag(:tbody) do
-              LineItem.where(order_id: order.id).each do |item|
+              order.line_items.each do |item|
                 if items
                   items += set_order_item_helper item
                 else
@@ -67,7 +67,7 @@ module OrderHelper
   def set_order_item_helper(item)
 
     content_tag(:article, class: "product") do
-      product = Product.find_by id: item.product_id
+      product = item.product
 
       content_tag :tr do
         img_tag = content_tag(:td) do
