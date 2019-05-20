@@ -1,5 +1,5 @@
 <section class="review">
-  <% user = User.find review.user_id %>
+  <% user = review.user %>
   <div class="header">
     <span class="review-rating">Rating:
       <% (1..5).each do |num| %>

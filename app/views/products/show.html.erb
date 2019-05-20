@@ -46,10 +46,11 @@
     <% end %>
 
     <h3>Reviews</h3>
-    <% if @reviews.size %>
+    <%  reviews = @product.reviews.order(created_at: :desc)
+      if reviews.size %>
       <div class="row">
-        <% @reviews.each do |review| %>
-          <%= render partial: '/products/review', locals: { product: @product, review: review } %>
+        <% reviews.each do |review| %>
+          <%= render partial: '/products/review', locals: { review: review } %>
         <% end %>
       </div>
 

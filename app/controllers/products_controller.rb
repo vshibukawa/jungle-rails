@@ -7,7 +7,8 @@ class ProductsController < ApplicationController
   def show
     @review = Review.new
     @product = Product.find params[:id]
-    @reviews = @product.review.all
+    # @reviews = @product.review.all.order(created_at: :desc)
+    # @users = User.joins(:review).where(reviews: {product_id: 12}).order(id: :asc).uniq
     # @reviews = Review.where(product_id: @product.id).order(created_at: :desc)
     # byebug
     # @users = User.find(@reviews) if @reviews.size
