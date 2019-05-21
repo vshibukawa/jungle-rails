@@ -68,4 +68,5 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
+  # gem 'rmagick'
 end
