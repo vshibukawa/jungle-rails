@@ -11,7 +11,7 @@ Order
 ![Image of order](./img/order.png)
 
 Product Review
-![Image of product review](./img/review.png)
+![Image of product review](./img/reviews.png)
 
 
 ## Setup
