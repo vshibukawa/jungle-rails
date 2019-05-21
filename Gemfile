@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "~> 2.5.3"
+ruby "~> 2.3.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -61,3 +61,9 @@ group :production do
 end
 
 gem 'aws-sdk', '~> 2'
+
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
